@@ -32,6 +32,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# local source scans/PDFs (site uses public/images)
+/source-assets/
 
 # vercel
 .vercel
