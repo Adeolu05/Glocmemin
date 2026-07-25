@@ -1,14 +1,28 @@
 import { ministry } from "@/content/ministry";
 
+function resolveSiteUrl() {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  if (explicit) return explicit;
+
+  const production = process.env.VERCEL_PROJECT_PRODUCTION_URL?.replace(
+    /\/$/,
+    "",
+  );
+  if (production) return `https://${production}`;
+
+  const deployment = process.env.VERCEL_URL?.replace(/\/$/, "");
+  if (deployment) return `https://${deployment}`;
+
+  return "http://localhost:3000";
+}
+
 export const siteConfig = {
   name: ministry.name,
   shortName: ministry.shortName,
   description:
     "Global Christ Message Ministry (GLOCMEMIN) - End Time Christ Army. Presenting every man perfect in Christ Jesus. Colossians 1:28.",
   motto: ministry.motto,
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-    "http://localhost:3000",
+  url: resolveSiteUrl(),
   locale: "en_NG",
 } as const;
 
