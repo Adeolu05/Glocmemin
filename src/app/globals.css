@@ -587,6 +587,16 @@ a {
   border-bottom: 1px solid var(--line);
 }
 
+.video-portrait {
+  display: block;
+  width: min(100%, 360px);
+  aspect-ratio: 9 / 16;
+  max-height: min(78vh, 640px);
+  object-fit: contain;
+  background: #000;
+  border-radius: 0.35rem;
+}
+
 .this-week {
   margin-bottom: 2.5rem;
   padding: 1.5rem 0 1.75rem;

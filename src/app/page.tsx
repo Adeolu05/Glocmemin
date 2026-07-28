@@ -181,15 +181,16 @@ export default function HomePage() {
           </Reveal>
           <Reveal delayMs={80}>
             <div className="overflow-hidden border border-[var(--line)] bg-navy text-white">
-              <video
-                className="aspect-video w-full object-cover"
-                controls
-                playsInline
-                preload="metadata"
-                poster="/images/training-class.jpg"
-              >
-                <source src="/videos/outreach.mp4" type="video/mp4" />
-              </video>
+              <div className="flex justify-center bg-navy-deep px-4 py-5">
+                <video
+                  className="video-portrait"
+                  controls
+                  playsInline
+                  preload="metadata"
+                >
+                  <source src="/videos/outreach.mp4" type="video/mp4" />
+                </video>
+              </div>
               <div className="px-5 py-4">
                 <p className="text-sm tracking-[0.14em] text-[var(--gold)] uppercase">
                   Outreach
