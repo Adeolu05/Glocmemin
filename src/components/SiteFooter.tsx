@@ -41,7 +41,7 @@ export function SiteFooter() {
               <Link href="/life">Life</Link>
             </li>
             <li>
-              <Link href="/humanitarian">Humanitarian</Link>
+              <Link href="/humanitarian">Care</Link>
             </li>
             <li>
               <Link href="/give">Give</Link>
@@ -53,7 +53,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <p className="site-footer__label">Reach Us</p>
+          <p className="site-footer__label">Come close</p>
           <ul className="site-footer__links">
             <li>
               <a href={`mailto:${ministry.contact.email}`}>
@@ -66,7 +66,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noreferrer"
               >
-                WhatsApp programs
+                Join us on WhatsApp
               </a>
             </li>
             <li>
@@ -75,7 +75,7 @@ export function SiteFooter() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Facebook · {ministry.contact.facebook}
+                Live on Facebook · {ministry.contact.facebook}
               </a>
             </li>
             <li>WhatsApp {ministry.contact.whatsapp}</li>

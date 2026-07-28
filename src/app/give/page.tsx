@@ -13,16 +13,18 @@ export default function GivePage() {
   return (
     <>
       <PageHero
-        eyebrow="Support"
-        title="Offering and sacrificial giving"
-        description="The ministry is to be supported by offering, gift, percentage sacrificial offering ( which is more than tithes) rather than lunching and other ceremonies."
+        eyebrow="Sow into the work"
+        title="Your giving keeps the mission moving"
+        description="Offerings, gifts, and sacrificial giving help carry the Word - and care for people."
       />
 
       <section className="section">
         <div className="container max-w-3xl">
           <Reveal>
             <article className="border-t-2 border-navy pt-6">
-              <h2 className="display text-2xl text-navy">Giving</h2>
+              <h2 className="display text-2xl text-navy">
+                What the Word teaches us about giving
+              </h2>
               <p className="prose-lead mt-4">{ministry.giving}</p>
               <p className="mt-4 text-sm font-semibold text-azure">
                 {ministry.givingRefs}
@@ -32,10 +34,12 @@ export default function GivePage() {
 
           <Reveal delayMs={80}>
             <article className="mt-10 border-t border-[var(--line)] pt-6">
-              <h2 className="display text-2xl text-navy">Account details</h2>
+              <h2 className="display text-2xl text-navy">
+                Ready to give?
+              </h2>
               <p className="mt-3 text-ink-soft">
-                Account details coming soon. For now, reach the ministry on
-                WhatsApp to give or ask about offering.
+                Bank account details are coming soon. For now, message the
+                ministry on WhatsApp and we will guide you warmly.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
@@ -44,7 +48,7 @@ export default function GivePage() {
                   rel="noreferrer"
                   className="btn btn-primary"
                 >
-                  WhatsApp programs
+                  Message on WhatsApp
                 </a>
                 <a
                   href={`https://wa.me/234${ministry.contact.whatsapp.slice(1)}`}
@@ -52,7 +56,7 @@ export default function GivePage() {
                   rel="noreferrer"
                   className="btn btn-outline"
                 >
-                  WhatsApp {ministry.contact.whatsapp}
+                  Chat {ministry.contact.whatsapp}
                 </a>
               </div>
             </article>
@@ -61,7 +65,7 @@ export default function GivePage() {
           <Reveal delayMs={120}>
             <p className="prose-lead mt-12">{ministry.invitation}</p>
             <Link href="/humanitarian" className="btn btn-outline mt-6">
-              Humanitarian department
+              See where love is working
             </Link>
           </Reveal>
         </div>

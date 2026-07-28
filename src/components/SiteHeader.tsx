@@ -12,7 +12,7 @@ const links = [
   { href: "/beliefs", label: "Beliefs" },
   { href: "/programs", label: "Programs" },
   { href: "/life", label: "Life" },
-  { href: "/humanitarian", label: "Humanitarian" },
+  { href: "/humanitarian", label: "Care" },
   { href: "/give", label: "Give" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -122,7 +122,7 @@ export function SiteHeader() {
                 overHero ? "btn-ghost" : "btn-primary"
               }`}
             >
-              Join Live
+              Join us live
             </a>
             <button
               type="button"
@@ -198,7 +198,7 @@ export function SiteHeader() {
                 className="btn btn-primary mt-4 !bg-white !text-navy"
                 onClick={() => setOpen(false)}
               >
-                Join WhatsApp programs
+                Join us on WhatsApp
               </a>
             </div>
           </div>

@@ -13,13 +13,17 @@ export default function LifePage() {
   return (
     <>
       <PageHero
-        eyebrow="Discipleship"
-        title="WHAT YOU SHOULD KNOW ABOUT YOURSELF"
-        description="Why do you come to the church or fellowship?"
+        eyebrow="For every believer"
+        title="Why you are here matters"
+        description="Take a moment with these truths - they shape how we come to church and how we live for Christ."
       />
 
       <section className="section">
         <div className="container">
+          <p className="eyebrow mb-2">From the brochure</p>
+          <h2 className="display mb-8 text-2xl text-navy md:text-3xl">
+            {ministry.knowYourselfTitle}
+          </h2>
           <div className="border-t border-[var(--line)]">
             {ministry.knowYourself.map((item, index) => (
               <Reveal key={item.title} delayMs={index * 40}>
@@ -35,10 +39,8 @@ export default function LifePage() {
                         {item.duties.map((duty, dutyIndex) => (
                           <li key={duty}>
                             (
-                            {
-                              ["i", "ii", "iii", "iv", "v", "vi"][dutyIndex]
-                            }
-                            ) {duty}
+                            {["i", "ii", "iii", "iv", "v", "vi"][dutyIndex]}){" "}
+                            {duty}
                           </li>
                         ))}
                       </ol>
@@ -62,10 +64,10 @@ export default function LifePage() {
                 rel="noreferrer"
                 className="btn btn-primary"
               >
-                Join WhatsApp programs
+                Join us on WhatsApp
               </a>
               <Link href="/humanitarian" className="btn btn-outline">
-                Humanitarian department
+                See our care work
               </Link>
             </div>
           </Reveal>

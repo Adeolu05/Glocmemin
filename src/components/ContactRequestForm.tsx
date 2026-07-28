@@ -7,9 +7,9 @@ import { whatsappUrl } from "@/lib/site";
 type RequestType = "prayer" | "visit" | "online";
 
 const labels: Record<RequestType, string> = {
-  prayer: "Prayer request",
-  visit: "Plan a visit",
-  online: "Join online",
+  prayer: "I need prayer",
+  visit: "I want to visit",
+  online: "I want to join online",
 };
 
 export function ContactRequestForm() {
@@ -37,11 +37,11 @@ export function ContactRequestForm() {
   return (
     <form className="request-form" onSubmit={onSubmit}>
       <div className="request-form__head">
-        <p className="eyebrow">Write to us</p>
-        <h2 className="display request-form__title">Prayer or visit request</h2>
+        <p className="eyebrow">Send a quick note</p>
+        <h2 className="display request-form__title">We are listening</h2>
         <p className="request-form__desc">
-          Send a short note. It opens WhatsApp to {ministry.minister} with your
-          message ready to send.
+          Share a prayer need or ask to visit. We will open WhatsApp to{" "}
+          {ministry.minister} with your message ready.
         </p>
       </div>
 
@@ -87,7 +87,7 @@ export function ContactRequestForm() {
       </label>
 
       <button type="submit" className="btn btn-primary">
-        Continue on WhatsApp
+        Send on WhatsApp
       </button>
     </form>
   );

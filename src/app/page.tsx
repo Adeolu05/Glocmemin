@@ -33,7 +33,8 @@ export default function HomePage() {
               </span>
             </h1>
             <p className="fade-up-delay-2 mt-5 max-w-xl text-lg text-white/88 md:text-xl">
-              {ministry.vision}
+              Come as you are - pray with us, learn Christ, and grow with the
+              family under the tent.
             </p>
             <div className="fade-up-delay-2 mt-8 flex flex-wrap gap-3">
               <a
@@ -42,7 +43,7 @@ export default function HomePage() {
                 rel="noreferrer"
                 className="btn btn-primary"
               >
-                Join WhatsApp programs
+                Join us on WhatsApp
               </a>
               <a
                 href={ministry.contact.facebookProgram}
@@ -50,7 +51,7 @@ export default function HomePage() {
                 rel="noreferrer"
                 className="btn btn-ghost"
               >
-                Watch on Facebook
+                Catch us live on Facebook
               </a>
             </div>
           </div>
@@ -62,8 +63,8 @@ export default function HomePage() {
           <SplitBlock
             label={
               <>
-                <p className="eyebrow">VISION</p>
-                <h2 className="display">PRESENT every man PERFECT</h2>
+                <p className="eyebrow">Our heart</p>
+                <h2 className="display">Why we gather</h2>
               </>
             }
           >
@@ -75,7 +76,7 @@ export default function HomePage() {
               OUR MISSION: - {ministry.mission}
             </p>
             <Link href="/about" className="btn btn-outline mt-7">
-              Read the full story
+              Get to know us better
             </Link>
           </SplitBlock>
         </div>
@@ -84,8 +85,8 @@ export default function HomePage() {
       <section className="section-tight section-band">
         <div className="container">
           <SectionHead
-            eyebrow="LOGO"
-            title="Therefore we are to destroy"
+            eyebrow="What we stand against"
+            title="Freedom starts here"
             description={ministry.destroyClose}
           />
 
@@ -108,9 +109,9 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <SectionHead
-            eyebrow="OBJECTIVES"
-            title="OUR ONLINE PROGRAMS"
-            description="You can reach us on Whatsapp, 08034958884 and Face book on AJakaye Adeyemi."
+            eyebrow="This week with us"
+            title="Come pray. Come grow."
+            description="Jump into daily prayer, vigils, and revival - most of it happens live on WhatsApp and Facebook."
           />
 
           <ThisWeekHighlight />
@@ -133,7 +134,7 @@ export default function HomePage() {
           <Reveal>
             <div className="revival-band">
               <div>
-                <p className="eyebrow">Monthly Revival</p>
+                <p className="eyebrow">Don&apos;t miss this</p>
                 <p className="display mt-2 text-2xl text-navy">
                   {ministry.monthly.title}
                 </p>
@@ -146,10 +147,10 @@ export default function HomePage() {
                   rel="noreferrer"
                   className="btn btn-primary"
                 >
-                  Join WhatsApp
+                  Join the revival group
                 </a>
                 <Link href="/programs" className="btn btn-outline">
-                  Full schedule
+                  See every program
                 </Link>
               </div>
             </div>
@@ -170,7 +171,7 @@ export default function HomePage() {
               />
               <div className="px-5 py-4">
                 <p className="text-sm tracking-[0.14em] text-azure uppercase">
-                  Ministering
+                  Meet the minister
                 </p>
                 <p className="display mt-1 text-2xl text-navy">
                   {ministry.ministerTitle}
@@ -193,7 +194,7 @@ export default function HomePage() {
               </div>
               <div className="px-5 py-4">
                 <p className="text-sm tracking-[0.14em] text-[var(--gold)] uppercase">
-                  Outreach
+                  Out on the field
                 </p>
                 <p className="display mt-1 text-xl">
                   This is one of our outreach in conjunction with other churches
@@ -209,11 +210,13 @@ export default function HomePage() {
           <Reveal>
             <div className="cta-band">
               <p className="text-sm font-bold tracking-[0.18em] text-[var(--gold)] uppercase">
-                Know us · {ministry.knowUs}
+                You are welcome · {ministry.knowUs}
               </p>
               <h2 className="display">{ministry.invitation}</h2>
               <p>{ministry.locationNote}</p>
-              <p className="mt-2">Tent: {ministry.contact.tentLocation}</p>
+              <p className="mt-2">
+                Find us at the tent: {ministry.contact.tentLocation}
+              </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href={ministry.contact.whatsappGroup}
@@ -221,7 +224,7 @@ export default function HomePage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Join WhatsApp programs
+                  Join us on WhatsApp
                 </a>
                 <a
                   href={ministry.contact.facebookProgram}
@@ -229,7 +232,7 @@ export default function HomePage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Watch on Facebook
+                  Catch us live on Facebook
                 </a>
               </div>
             </div>

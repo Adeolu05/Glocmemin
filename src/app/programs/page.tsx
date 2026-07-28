@@ -17,9 +17,9 @@ export default function ProgramsPage() {
   return (
     <>
       <PageHero
-        eyebrow="OBJECTIVES"
-        title="OUR ONLINE PROGRAMS"
-        description="You can reach us on Whatsapp, 08034958884 and Face book on AJakaye Adeyemi."
+        eyebrow="Gather with us"
+        title="Prayer, vigils, and revival"
+        description="From Sunday service to midnight watches - step into the rhythm. Most meetings are live on WhatsApp and Facebook."
         action={
           <div className="flex flex-wrap gap-3">
             <a
@@ -28,7 +28,7 @@ export default function ProgramsPage() {
               rel="noreferrer"
               className="btn btn-primary"
             >
-              Join WhatsApp programs
+              Join us on WhatsApp
             </a>
             <a
               href={ministry.contact.facebookProgram}
@@ -36,7 +36,7 @@ export default function ProgramsPage() {
               rel="noreferrer"
               className="btn btn-outline"
             >
-              Watch on Facebook
+              Catch us live on Facebook
             </a>
           </div>
         }
@@ -49,7 +49,7 @@ export default function ProgramsPage() {
               <div>
                 <p className="eyebrow">Online &amp; Live</p>
                 <h2 className="display mt-2 text-2xl text-navy">
-                  Most programs take place on WhatsApp
+                  The fire is already burning online
                 </h2>
                 <p className="mt-2 text-ink-soft">
                   {ministry.contact.facebookProgramNote}
@@ -62,7 +62,7 @@ export default function ProgramsPage() {
                   rel="noreferrer"
                   className="btn btn-primary"
                 >
-                  Join WhatsApp
+                  Enter WhatsApp
                 </a>
                 <a
                   href={ministry.contact.facebookProgram}
@@ -70,7 +70,7 @@ export default function ProgramsPage() {
                   rel="noreferrer"
                   className="btn btn-outline"
                 >
-                  Facebook program
+                  Open Facebook
                 </a>
               </div>
             </div>
@@ -79,8 +79,8 @@ export default function ProgramsPage() {
           <ThisWeekHighlight showLink={false} />
 
           <SectionHead
-            eyebrow="On Sunday"
-            title="Sunday gatherings"
+            eyebrow="Sunday family time"
+            title="When the house gathers"
             description={ministry.saturdayNote}
           />
 
@@ -104,8 +104,8 @@ export default function ProgramsPage() {
       <section className="section section-band">
         <div className="container">
           <SectionHead
-            eyebrow="Weekly"
-            title="Prayer, vigils and clinic"
+            eyebrow="Through the week"
+            title="Keep the altar burning"
             description={ministry.objectivesIntro}
           />
 
@@ -146,7 +146,7 @@ export default function ProgramsPage() {
           <Reveal>
             <article className="cta-band h-full">
               <p className="text-sm tracking-[0.16em] text-white/60 uppercase">
-                Monthly Revival
+                Mark your calendar
               </p>
               <h2 className="display !max-w-none">{ministry.monthly.title}</h2>
               <p className="!text-[var(--gold)] !text-xl">
@@ -160,10 +160,10 @@ export default function ProgramsPage() {
                   rel="noreferrer"
                   className="btn btn-on-dark"
                 >
-                  Join WhatsApp
+                  Join the revival group
                 </a>
                 <Link href="/contact" className="btn btn-ghost">
-                  Contact
+                  Say hello
                 </Link>
               </div>
             </article>
@@ -171,7 +171,7 @@ export default function ProgramsPage() {
 
           <Reveal delayMs={80}>
             <article className="rule-item">
-              <h3 className="display">Tent location</h3>
+              <h3 className="display">Where to find us</h3>
               <p>{ministry.contact.locationDetail}</p>
               <a
                 href={ministry.contact.facebookProgram}
@@ -179,7 +179,7 @@ export default function ProgramsPage() {
                 rel="noreferrer"
                 className="btn btn-outline mt-6"
               >
-                Watch Facebook program
+                Watch a Facebook program
               </a>
             </article>
           </Reveal>

@@ -18,9 +18,9 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact"
-        title="Reach the ministry"
-        description={`You can reach us on Whatsapp, ${ministry.contact.whatsapp} and Face book on AJakaye Adeyemi.`}
+        eyebrow="We would love to hear from you"
+        title="Come closer"
+        description="Pray with us, visit the tent, or jump into a live program. We are one message away."
         action={
           <div className="flex flex-wrap gap-3">
             <a
@@ -29,7 +29,7 @@ export default function ContactPage() {
               rel="noreferrer"
               className="btn btn-primary"
             >
-              Join WhatsApp programs
+              Join us on WhatsApp
             </a>
             <a
               href={ministry.contact.facebookProgram}
@@ -37,7 +37,7 @@ export default function ContactPage() {
               rel="noreferrer"
               className="btn btn-outline"
             >
-              Watch on Facebook
+              Catch us live on Facebook
             </a>
           </div>
         }
@@ -55,10 +55,10 @@ export default function ContactPage() {
                   className="block border-t-2 border-navy py-6 transition hover:bg-white/40"
                 >
                   <p className="text-sm tracking-[0.14em] text-azure uppercase">
-                    WhatsApp programs
+                    WhatsApp family
                   </p>
                   <p className="display mt-2 text-2xl text-navy">
-                    Join the group where most programs take place
+                    Step into the group where the programs happen
                   </p>
                 </a>
               </Reveal>
@@ -121,7 +121,7 @@ export default function ContactPage() {
           <div className="grid gap-8">
             <Reveal delayMs={80}>
               <article>
-                <h2 className="display text-2xl text-navy">Phone lines</h2>
+                <h2 className="display text-2xl text-navy">Call any line</h2>
                 <ul className="mt-4 space-y-2">
                   {ministry.contact.phones.map((phone) => (
                     <li key={phone}>
@@ -139,7 +139,7 @@ export default function ContactPage() {
 
             <Reveal delayMs={120}>
               <article className="border-t border-[var(--line)] pt-6">
-                <h2 className="display text-2xl text-navy">Tent location</h2>
+                <h2 className="display text-2xl text-navy">Find the tent</h2>
                 <p className="mt-3 text-lg text-ink-soft">
                   {ministry.contact.locationDetail}
                 </p>
@@ -158,7 +158,7 @@ export default function ContactPage() {
                   rel="noreferrer"
                   className="btn btn-outline mt-4"
                 >
-                  Open in Google Maps
+                  Get directions
                 </a>
                 <p className="mt-6 text-sm font-semibold tracking-[0.12em] text-gold uppercase">
                   {ministry.motto}

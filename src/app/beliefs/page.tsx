@@ -6,20 +6,22 @@ import { ministry } from "@/content/ministry";
 
 export const metadata: Metadata = {
   title: "Beliefs",
-  description: "OUR BELIEF - Trinity, Rapture, Angeles, Heaven and Hell, prayer, healing, and baptism.",
+  description:
+    "What GLOCMEMIN believes - Trinity, Rapture, Angeles, Heaven and Hell, prayer, healing, and baptism.",
 };
 
 export default function BeliefsPage() {
   return (
     <>
       <PageHero
-        eyebrow="OUR BELIEF"
-        title="OUR BELIEF"
-        description={ministry.destroyClose}
+        eyebrow="Our faith"
+        title="This is where we stand"
+        description="Clear convictions. Living faith. Come and see what anchors this house."
       />
 
       <section className="section">
         <div className="container">
+          <p className="eyebrow mb-6">OUR BELIEF</p>
           <div className="border-t border-[var(--line)]">
             {ministry.beliefs.map((belief, index) => (
               <Reveal key={belief.title} delayMs={index * 40}>
@@ -39,13 +41,13 @@ export default function BeliefsPage() {
           <Reveal className="mt-14">
             <div className="cta-band">
               <p className="text-sm tracking-[0.16em] text-white/60 uppercase">
-                Invitation
+                An open door
               </p>
               <h2 className="display">{ministry.invitation}</h2>
               <p>{ministry.aboveAll}</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/contact" className="btn btn-on-dark">
-                  Contact us
+                  Talk with us
                 </Link>
                 <a
                   href={ministry.contact.whatsappGroup}
@@ -53,7 +55,7 @@ export default function BeliefsPage() {
                   rel="noreferrer"
                   className="btn btn-ghost"
                 >
-                  Join WhatsApp programs
+                  Join us on WhatsApp
                 </a>
               </div>
             </div>

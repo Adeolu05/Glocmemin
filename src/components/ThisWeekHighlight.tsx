@@ -14,12 +14,12 @@ export function ThisWeekHighlight({ showLink = true }: ThisWeekHighlightProps) {
       <div className="this-week">
         <div className="this-week__head">
           <div>
-            <p className="eyebrow">Happening now</p>
-            <h3 className="display this-week__title">This week&apos;s focus</h3>
+            <p className="eyebrow">Right now</p>
+            <h3 className="display this-week__title">What&apos;s on this week</h3>
           </div>
           {showLink ? (
             <Link href="/programs" className="btn btn-outline !min-h-10 !px-4 !text-sm">
-              Full schedule
+              See all programs
             </Link>
           ) : null}
         </div>

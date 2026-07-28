@@ -16,9 +16,9 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        eyebrow="NAME"
-        title={`${ministry.name}' (${ministry.shortName})`}
-        description={`The ministry shall be call “GLOBAL CHRIST MESSAGE MINISTRY' (GLOCMEMIN) The Church arm is to be called- ${ministry.churchArm}.`}
+        eyebrow="Who we are"
+        title={`${ministry.name} (${ministry.shortName})`}
+        description="A people raised to take Christ to the world - and to train disciples under the tent."
       />
 
       <section className="section-tight">
@@ -26,7 +26,13 @@ export default function AboutPage() {
           <div className="grid gap-8">
             <Reveal>
               <article className="border-t-2 border-navy pt-5">
-                <p className="eyebrow">VISION</p>
+                <p className="eyebrow">NAME</p>
+                <p className="mt-3 text-ink-soft">
+                  The ministry shall be call “GLOBAL CHRIST MESSAGE MINISTRY&apos;
+                  (GLOCMEMIN) The Church arm is to be called-{" "}
+                  {ministry.churchArm}.
+                </p>
+                <p className="eyebrow mt-8">VISION</p>
                 <p className="display mt-4 text-2xl leading-snug text-navy">
                   {ministry.vision}
                 </p>
@@ -55,7 +61,7 @@ export default function AboutPage() {
               />
               <div className="px-6 py-5">
                 <p className="text-sm tracking-[0.14em] text-azure uppercase">
-                  Ministering
+                  Meet the minister
                 </p>
                 <p className="display mt-1 text-2xl text-navy">
                   {ministry.ministerTitle}
@@ -70,9 +76,9 @@ export default function AboutPage() {
       <section className="section">
         <div className="container">
           <SectionHead
-            eyebrow="Through"
-            title="Mission pathways"
-            description="Village and urban evangelism; Tracts distribution; Bible school; CHURCH ARM."
+            eyebrow="How we go"
+            title="This is how the Word travels"
+            description="From village paths to Bible school - every path is aimed at souls and service."
           />
 
           <div className="grid gap-6 md:grid-cols-2">
@@ -103,7 +109,7 @@ export default function AboutPage() {
               />
               <div className="px-5 py-4">
                 <p className="text-sm tracking-[0.14em] text-azure uppercase">
-                  Training class
+                  Life under the tent
                 </p>
                 <p className="mt-1 text-ink-soft">
                   this is one of our training class
@@ -113,8 +119,8 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delayMs={80}>
             <div>
-              <p className="eyebrow">LOGO</p>
-              <h2 className="display mt-3 text-3xl text-navy">3. LOGO</h2>
+              <p className="eyebrow">Our emblem</p>
+              <h2 className="display mt-3 text-3xl text-navy">What the logo means</h2>
               <p className="prose-lead mt-4">{ministry.logoMeaning}</p>
               <p className="mt-4 text-ink-soft">{ministry.destroyIntro}</p>
               <ul className="mt-4 space-y-3 text-ink-soft">
@@ -140,7 +146,10 @@ export default function AboutPage() {
 
       <section className="section">
         <div className="container">
-          <SectionHead eyebrow="Member life" title="Saved to serve" />
+          <SectionHead
+            eyebrow="Family life"
+            title="How we walk together"
+          />
           <div className="grid gap-8 md:grid-cols-1">
             {ministry.memberLife.map((item, index) => (
               <Reveal key={item.title} delayMs={index * 60}>
@@ -153,7 +162,10 @@ export default function AboutPage() {
           </div>
 
           <Reveal className="mt-12">
-            <SectionHead eyebrow="House practices" title="Biblical practices" />
+            <SectionHead
+              eyebrow="Milestones of life"
+              title="Naming, marriage, and burial"
+            />
           </Reveal>
           <div className="grid gap-8 md:grid-cols-3">
             {ministry.practices.map((item, index) => (
@@ -169,10 +181,10 @@ export default function AboutPage() {
             <p className="prose-lead">{ministry.aboveAll}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/beliefs" className="btn btn-primary">
-                OUR BELIEF
+                What we believe
               </Link>
               <Link href="/life" className="btn btn-outline">
-                What you should know
+                Why you come to fellowship
               </Link>
             </div>
           </Reveal>

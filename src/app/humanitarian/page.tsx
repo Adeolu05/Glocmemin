@@ -13,13 +13,14 @@ export default function HumanitarianPage() {
   return (
     <>
       <PageHero
-        eyebrow="Care"
-        title={ministry.humanitarianTitle}
-        description={ministry.invitation}
+        eyebrow="Love in action"
+        title="We care for people"
+        description="Orphanage, rehab, clinic, and empowerment - faith that reaches the hurting."
       />
 
       <section className="section">
         <div className="container">
+          <p className="eyebrow mb-8">{ministry.humanitarianTitle}</p>
           <div className="grid gap-8 md:grid-cols-2">
             {ministry.humanitarian.map((item, index) => (
               <Reveal key={item.title} delayMs={index * 60}>
@@ -46,10 +47,10 @@ export default function HumanitarianPage() {
               <h2 className="display">{ministry.invitation}</h2>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/contact" className="btn btn-on-dark">
-                  Contact us
+                  Talk with us
                 </Link>
                 <Link href="/give" className="btn btn-ghost">
-                  Giving
+                  Partner by giving
                 </Link>
               </div>
             </div>
