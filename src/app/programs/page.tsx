@@ -10,26 +10,78 @@ import { ministry } from "@/content/ministry";
 export const metadata: Metadata = {
   title: "Programs",
   description:
-    "Sunday services, online prayer, vigils, Sinner’s Clinic, healing, deliverance, and Make My Live A New revival schedule.",
+    "OUR ONLINE PROGRAMS. Daily prayer, ORU ATUNYAN, The Hand Taught of God, Sinner’s Clinic, Healing /Deliverance, MAKE MY LIVE A NEW.",
 };
 
 export default function ProgramsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Programs & Schedule"
-        title="When we gather"
-        description="Bible studies tagged Back to God's Quarry, prayer meetings, Sunday worship, and online programs throughout the week."
+        eyebrow="OBJECTIVES"
+        title="OUR ONLINE PROGRAMS"
+        description="You can reach us on Whatsapp, 08034958884 and Face book on AJakaye Adeyemi."
+        action={
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={ministry.contact.whatsappGroup}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-primary"
+            >
+              Join WhatsApp programs
+            </a>
+            <a
+              href={ministry.contact.facebookProgram}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-outline"
+            >
+              Watch on Facebook
+            </a>
+          </div>
+        }
       />
 
       <section className="section-tight">
         <div className="container">
+          <Reveal>
+            <div className="online-strip">
+              <div>
+                <p className="eyebrow">Online &amp; Live</p>
+                <h2 className="display mt-2 text-2xl text-navy">
+                  Most programs take place on WhatsApp
+                </h2>
+                <p className="mt-2 text-ink-soft">
+                  {ministry.contact.facebookProgramNote}
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={ministry.contact.whatsappGroup}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary"
+                >
+                  Join WhatsApp
+                </a>
+                <a
+                  href={ministry.contact.facebookProgram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-outline"
+                >
+                  Facebook program
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
           <ThisWeekHighlight showLink={false} />
 
           <SectionHead
-            eyebrow="Sunday"
-            title="The Lord’s Day"
-            description="Main worship, fishing time, and the first-Sunday communion gathering."
+            eyebrow="On Sunday"
+            title="Sunday gatherings"
+            description={ministry.saturdayNote}
           />
 
           <Reveal>
@@ -52,10 +104,25 @@ export default function ProgramsPage() {
       <section className="section section-band">
         <div className="container">
           <SectionHead
-            eyebrow="Weekly Rhythm"
-            title="Live and online"
-            description={`Daily prayer, vigils, clinic, healing, and village evangelism - reach us on WhatsApp ${ministry.contact.whatsapp}.`}
+            eyebrow="Weekly"
+            title="Prayer, vigils and clinic"
+            description={ministry.objectivesIntro}
           />
+
+          <Reveal>
+            <div className="schedule-list mb-8">
+              {ministry.gatherings.map((item, index) => (
+                <ScheduleRow
+                  key={item.title}
+                  label="Meeting"
+                  title={item.title}
+                  detail={item.detail}
+                  time={"ref" in item && item.ref ? item.ref : "As scheduled"}
+                  bordered={index !== ministry.gatherings.length - 1}
+                />
+              ))}
+            </div>
+          </Reveal>
 
           <Reveal>
             <div className="schedule-list">
@@ -85,29 +152,37 @@ export default function ProgramsPage() {
               <p className="!text-[var(--gold)] !text-xl">
                 {ministry.monthly.dates}
               </p>
-              <p className="!mt-2">{ministry.monthly.time}</p>
               <p>{ministry.monthly.detail}</p>
-              <Link href="/contact" className="btn btn-on-dark mt-8">
-                Ask how to join online
-              </Link>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href={ministry.contact.whatsappGroup}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-on-dark"
+                >
+                  Join WhatsApp
+                </a>
+                <Link href="/contact" className="btn btn-ghost">
+                  Contact
+                </Link>
+              </div>
             </article>
           </Reveal>
 
-          <div className="grid gap-5">
-            {ministry.gatherings.map((item, index) => (
-              <Reveal key={item.title} delayMs={index * 60}>
-                <article className="rule-item">
-                  <h3 className="display">{item.title}</h3>
-                  <p>{item.detail}</p>
-                  {"ref" in item && item.ref ? (
-                    <p className="mt-2 text-sm font-semibold text-azure">
-                      {item.ref}
-                    </p>
-                  ) : null}
-                </article>
-              </Reveal>
-            ))}
-          </div>
+          <Reveal delayMs={80}>
+            <article className="rule-item">
+              <h3 className="display">Tent location</h3>
+              <p>{ministry.contact.locationDetail}</p>
+              <a
+                href={ministry.contact.facebookProgram}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-outline mt-6"
+              >
+                Watch Facebook program
+              </a>
+            </article>
+          </Reveal>
         </div>
       </section>
     </>

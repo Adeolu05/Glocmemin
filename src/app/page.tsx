@@ -6,43 +6,52 @@ import { SectionHead } from "@/components/SectionHead";
 import { SplitBlock } from "@/components/SplitBlock";
 import { ThisWeekHighlight } from "@/components/ThisWeekHighlight";
 import { ministry } from "@/content/ministry";
-import { whatsappUrl } from "@/lib/site";
 
 export default function HomePage() {
-  const wa = whatsappUrl();
-
   return (
     <>
       <section className="relative min-h-[100svh] overflow-hidden grain">
         <Image
-          src="/images/hero-dawn.jpg"
-          alt="Open Bible at dawn over a hillside landscape"
+          src="/images/training-class.jpg"
+          alt="Discipleship training class under the ministry tent"
           fill
           priority
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,26,51,0.42)_0%,rgba(7,26,51,0.35)_40%,rgba(7,26,51,0.88)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(7,26,51,0.5)_0%,rgba(7,26,51,0.42)_40%,rgba(7,26,51,0.9)_100%)]" />
 
         <div className="container relative z-10 flex min-h-[100svh] flex-col justify-end pb-16 pt-28 md:pb-24">
           <div className="max-w-3xl text-white">
             <p className="fade-up mb-3 text-sm font-bold tracking-[0.2em] text-[var(--gold)] uppercase">
               {ministry.churchArm}
             </p>
-            <h1 className="display fade-up-delay text-[clamp(3rem,9vw,5.8rem)] text-white">
+            <h1 className="display fade-up-delay text-[clamp(2.6rem,8vw,5.2rem)] text-white">
               {ministry.name}
+              <span className="mt-2 block text-[0.45em] tracking-[0.08em]">
+                ({ministry.shortName})
+              </span>
             </h1>
             <p className="fade-up-delay-2 mt-5 max-w-xl text-lg text-white/88 md:text-xl">
-              Presenting every man perfect in Christ Jesus - through the
-              undiluted Word of God to the whole world.
+              {ministry.vision}
             </p>
             <div className="fade-up-delay-2 mt-8 flex flex-wrap gap-3">
-              <Link href="/programs" className="btn btn-primary">
-                See Our Programs
-              </Link>
-              <Link href="/contact" className="btn btn-ghost">
-                Worship With Us
-              </Link>
+              <a
+                href={ministry.contact.whatsappGroup}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary"
+              >
+                Join WhatsApp programs
+              </a>
+              <a
+                href={ministry.contact.facebookProgram}
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-ghost"
+              >
+                Watch on Facebook
+              </a>
             </div>
           </div>
         </div>
@@ -53,8 +62,8 @@ export default function HomePage() {
           <SplitBlock
             label={
               <>
-                <p className="eyebrow">Our Vision</p>
-                <h2 className="display">Perfect in Christ Jesus</h2>
+                <p className="eyebrow">VISION</p>
+                <h2 className="display">PRESENT every man PERFECT</h2>
               </>
             }
           >
@@ -62,7 +71,9 @@ export default function HomePage() {
               <p className="display">“{ministry.vision}”</p>
               <footer>{ministry.visionRef}</footer>
             </blockquote>
-            <p className="prose-lead mt-6">{ministry.mission}</p>
+            <p className="prose-lead mt-6">
+              OUR MISSION: - {ministry.mission}
+            </p>
             <Link href="/about" className="btn btn-outline mt-7">
               Read the full story
             </Link>
@@ -73,9 +84,9 @@ export default function HomePage() {
       <section className="section-tight section-band">
         <div className="container">
           <SectionHead
-            eyebrow="Why This Mission"
-            title="We contend against four forces"
-            description="Are you under the oppression of Satan, Sin, Flesh, or Worldliness? You need this mission."
+            eyebrow="LOGO"
+            title="Therefore we are to destroy"
+            description={ministry.destroyClose}
           />
 
           <div className="force-grid">
@@ -97,9 +108,9 @@ export default function HomePage() {
       <section className="section">
         <div className="container">
           <SectionHead
-            eyebrow="This Week"
-            title="Gather. Pray. Win souls."
-            description="Sunday worship leads the week - then prayer, vigils, and outreach carry the Word forward."
+            eyebrow="OBJECTIVES"
+            title="OUR ONLINE PROGRAMS"
+            description="You can reach us on Whatsapp, 08034958884 and Face book on AJakaye Adeyemi."
           />
 
           <ThisWeekHighlight />
@@ -126,14 +137,67 @@ export default function HomePage() {
                 <p className="display mt-2 text-2xl text-navy">
                   {ministry.monthly.title}
                 </p>
-                <p className="mt-1 text-ink-soft">
-                  {ministry.monthly.dates} · {ministry.monthly.time} · Live &amp;
-                  Online
+                <p className="mt-1 text-ink-soft">{ministry.monthly.detail}</p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={ministry.contact.whatsappGroup}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary"
+                >
+                  Join WhatsApp
+                </a>
+                <Link href="/programs" className="btn btn-outline">
+                  Full schedule
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="section-tight">
+        <div className="container grid gap-8 lg:grid-cols-2">
+          <Reveal>
+            <div className="overflow-hidden border border-[var(--line)] bg-white/40">
+              <Image
+                src="/images/pastor-ajakaye.jpg"
+                alt={ministry.ministerTitle}
+                width={800}
+                height={1000}
+                className="h-auto w-full object-cover"
+              />
+              <div className="px-5 py-4">
+                <p className="text-sm tracking-[0.14em] text-azure uppercase">
+                  Ministering
+                </p>
+                <p className="display mt-1 text-2xl text-navy">
+                  {ministry.ministerTitle}
+                </p>
+                <p className="mt-1 text-ink-soft">{ministry.minister}</p>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delayMs={80}>
+            <div className="overflow-hidden border border-[var(--line)] bg-navy text-white">
+              <video
+                className="aspect-video w-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+                poster="/images/training-class.jpg"
+              >
+                <source src="/videos/outreach.mp4" type="video/mp4" />
+              </video>
+              <div className="px-5 py-4">
+                <p className="text-sm tracking-[0.14em] text-[var(--gold)] uppercase">
+                  Outreach
+                </p>
+                <p className="display mt-1 text-xl">
+                  This is one of our outreach in conjunction with other churches
                 </p>
               </div>
-              <Link href="/programs" className="btn btn-primary">
-                Full schedule
-              </Link>
             </div>
           </Reveal>
         </div>
@@ -146,25 +210,26 @@ export default function HomePage() {
               <p className="text-sm font-bold tracking-[0.18em] text-[var(--gold)] uppercase">
                 Know us · {ministry.knowUs}
               </p>
-              <h2 className="display">
-                Come and experience the power of the cross.
-              </h2>
-              <p>
-                Reach {ministry.minister} on WhatsApp or fellowship with us in
-                Odogbolu.
-              </p>
+              <h2 className="display">{ministry.invitation}</h2>
+              <p>{ministry.locationNote}</p>
+              <p className="mt-2">Tent: {ministry.contact.tentLocation}</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href={wa}
+                  href={ministry.contact.whatsappGroup}
                   className="btn btn-on-dark"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  WhatsApp {ministry.contact.whatsapp}
+                  Join WhatsApp programs
                 </a>
-                <Link href="/beliefs" className="btn btn-ghost">
-                  What we believe
-                </Link>
+                <a
+                  href={ministry.contact.facebookProgram}
+                  className="btn btn-ghost"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Watch on Facebook
+                </a>
               </div>
             </div>
           </Reveal>

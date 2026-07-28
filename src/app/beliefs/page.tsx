@@ -6,17 +6,16 @@ import { ministry } from "@/content/ministry";
 
 export const metadata: Metadata = {
   title: "Beliefs",
-  description:
-    "Statement of faith of Global Christ Message Ministry - Trinity, Christ, angels, heaven and hell, prayer, healing, and baptism.",
+  description: "OUR BELIEF - Trinity, Rapture, Angeles, Heaven and Hell, prayer, healing, and baptism.",
 };
 
 export default function BeliefsPage() {
   return (
     <>
       <PageHero
-        eyebrow="Statement of Faith"
-        title="What we believe"
-        description="Our confession is rooted in Scripture - from the Triune God to the finished work of Christ, and the Spirit-filled life of the believer."
+        eyebrow="OUR BELIEF"
+        title="OUR BELIEF"
+        description={ministry.destroyClose}
       />
 
       <section className="section">
@@ -31,9 +30,6 @@ export default function BeliefsPage() {
                   <div>
                     <h2 className="display">{belief.title}</h2>
                     <p>{belief.text}</p>
-                    {"ref" in belief && belief.ref ? (
-                      <p className="belief-row__ref">{belief.ref}</p>
-                    ) : null}
                   </div>
                 </article>
               </Reveal>
@@ -43,22 +39,22 @@ export default function BeliefsPage() {
           <Reveal className="mt-14">
             <div className="cta-band">
               <p className="text-sm tracking-[0.16em] text-white/60 uppercase">
-                An open invitation
+                Invitation
               </p>
-              <h2 className="display">
-                If Jesus is not yet your Lord, today is the day to turn to Him.
-              </h2>
-              <p>
-                Hell is for sinners - that is why Jesus came into this world to
-                save us. Come and experience the power of the cross.
-              </p>
+              <h2 className="display">{ministry.invitation}</h2>
+              <p>{ministry.aboveAll}</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href="/contact" className="btn btn-on-dark">
-                  Talk to us
+                  Contact us
                 </Link>
-                <Link href="/programs" className="btn btn-ghost">
-                  Join a program
-                </Link>
+                <a
+                  href={ministry.contact.whatsappGroup}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-ghost"
+                >
+                  Join WhatsApp programs
+                </a>
               </div>
             </div>
           </Reveal>

@@ -19,12 +19,11 @@ function isRevivalWindow(date: Date) {
 }
 
 function sundayHighlights(date: Date): HighlightItem[] {
-  const isFirstSunday =
-    date.getDay() === 0 && date.getDate() <= 7;
+  const isFirstSunday = date.getDay() === 0 && date.getDate() <= 7;
 
   if (isFirstSunday) {
     const first = ministry.sunday.find(
-      (item) => item.title === "First Sunday of the Month",
+      (item) => item.title === "First Sunday of the month",
     );
     if (first) {
       return [
@@ -40,7 +39,7 @@ function sundayHighlights(date: Date): HighlightItem[] {
   }
 
   return ministry.sunday
-    .filter((item) => item.title !== "First Sunday of the Month")
+    .filter((item) => item.title !== "First Sunday of the month")
     .map((item) => ({
       eyebrow: "Today · Sunday",
       title: item.title,
@@ -90,7 +89,9 @@ function weekdayNamedProgram(date: Date): HighlightItem | null {
   }
 
   if (isThirdThursday(date)) {
-    const item = ministry.weekly.find((entry) => entry.day === "3rd Thursday");
+    const item = ministry.weekly.find((entry) =>
+      entry.day.startsWith("Every third Thursday"),
+    );
     if (!item) return null;
     return {
       eyebrow: "Today · 3rd Thursday",
@@ -117,15 +118,6 @@ function weekdayNamedProgram(date: Date): HighlightItem | null {
 }
 
 function nextNamedProgram(date: Date): HighlightItem {
-  const order = [
-    { day: 1, label: "Monday", match: "Monday" },
-    { day: 2, label: "Tuesday", match: "Tuesday" },
-    { day: 3, label: "Wednesday", match: "Wednesday" },
-    { day: 4, label: "Thursday", match: "3rd Thursday", thirdOnly: true },
-    { day: 6, label: "Saturday", match: "Saturday" },
-    { day: 0, label: "Sunday", match: "Sunday" },
-  ] as const;
-
   for (let offset = 1; offset <= 7; offset += 1) {
     const candidate = new Date(date);
     candidate.setDate(date.getDate() + offset);
@@ -134,34 +126,84 @@ function nextNamedProgram(date: Date): HighlightItem {
     if (weekday === 0) {
       return {
         eyebrow: "Upcoming · Sunday",
-        title: "Sunday Service",
+        title: ministry.sunday[0].title,
         time: ministry.sunday[0].time,
         detail: ministry.sunday[0].detail,
         kind: "upcoming",
       };
     }
 
-    const slot = order.find((entry) => entry.day === weekday);
-    if (!slot) continue;
-    if ("thirdOnly" in slot && slot.thirdOnly && !isThirdThursday(candidate)) {
-      continue;
+    if (weekday === 1) {
+      const item = ministry.weekly.find((entry) => entry.day === "Monday");
+      if (item) {
+        return {
+          eyebrow: "Upcoming · Monday",
+          title: item.title,
+          time: item.time,
+          detail: item.detail,
+          kind: "upcoming",
+        };
+      }
     }
 
-    const item = ministry.weekly.find((entry) => entry.day === slot.match);
-    if (!item) continue;
+    if (weekday === 2) {
+      const item = ministry.weekly.find((entry) => entry.day === "Tuesday");
+      if (item) {
+        return {
+          eyebrow: "Upcoming · Tuesday",
+          title: item.title,
+          time: item.time,
+          detail: item.detail,
+          kind: "upcoming",
+        };
+      }
+    }
 
-    return {
-      eyebrow: `Upcoming · ${slot.label}`,
-      title: item.title,
-      time: item.time,
-      detail: item.detail,
-      kind: "upcoming",
-    };
+    if (weekday === 3) {
+      const item = ministry.weekly.find((entry) => entry.day === "Wednesday");
+      if (item) {
+        return {
+          eyebrow: "Upcoming · Wednesday",
+          title: item.title,
+          time: item.time,
+          detail: item.detail,
+          kind: "upcoming",
+        };
+      }
+    }
+
+    if (weekday === 4 && isThirdThursday(candidate)) {
+      const item = ministry.weekly.find((entry) =>
+        entry.day.startsWith("Every third Thursday"),
+      );
+      if (item) {
+        return {
+          eyebrow: "Upcoming · 3rd Thursday",
+          title: item.title,
+          time: item.time,
+          detail: item.detail,
+          kind: "upcoming",
+        };
+      }
+    }
+
+    if (weekday === 6) {
+      const item = ministry.weekly.find((entry) => entry.day === "Saturday");
+      if (item) {
+        return {
+          eyebrow: "Upcoming · Saturday",
+          title: item.title,
+          time: item.time,
+          detail: item.detail,
+          kind: "upcoming",
+        };
+      }
+    }
   }
 
   return {
     eyebrow: "Upcoming · Sunday",
-    title: "Sunday Service",
+    title: ministry.sunday[0].title,
     time: ministry.sunday[0].time,
     detail: ministry.sunday[0].detail,
     kind: "upcoming",
@@ -187,7 +229,9 @@ export function getScheduleHighlights(now = new Date()) {
     const today = weekdayNamedProgram(now);
     if (today) highlights.push(today);
 
-    const daily = ministry.weekly.find((entry) => entry.day === "Monday–Friday");
+    const daily = ministry.weekly.find((entry) =>
+      entry.day.startsWith("Monday to Friday"),
+    );
     if (daily && now.getDay() >= 1 && now.getDay() <= 5 && now.getDay() !== 4) {
       highlights.push({
         eyebrow: "Today · Daily Prayer",
@@ -199,7 +243,9 @@ export function getScheduleHighlights(now = new Date()) {
     }
   }
 
-  if (!highlights.some((item) => item.kind === "today" || item.kind === "monthly")) {
+  if (
+    !highlights.some((item) => item.kind === "today" || item.kind === "monthly")
+  ) {
     highlights.push(nextNamedProgram(now));
   } else if (!highlights.some((item) => item.kind === "upcoming")) {
     highlights.push(nextNamedProgram(now));

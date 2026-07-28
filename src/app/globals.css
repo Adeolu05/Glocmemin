@@ -575,6 +575,18 @@ a {
   border-top: 1px solid var(--line);
 }
 
+.online-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem 0;
+  border-top: 2px solid var(--navy);
+  border-bottom: 1px solid var(--line);
+}
+
 .this-week {
   margin-bottom: 2.5rem;
   padding: 1.5rem 0 1.75rem;

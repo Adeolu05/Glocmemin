@@ -29,16 +29,16 @@ export const metadata: Metadata = {
   keywords: [
     "GLOCMEMIN",
     "Global Christ Message Ministry",
-    "End Time Christ Army",
-    "Odogbolu church",
-    "Evang. G. A. Ajakaye",
+    "End time Christ Army",
+    "Dojutelegan Gekuba Apata Ibadan",
+    "Adeyemi Ajakaye",
     "Christian ministry Nigeria",
   ],
-  authors: [{ name: "Global Christ Message Ministry" }],
+  authors: [{ name: "GLOBAL CHRIST MESSAGE MINISTRY" }],
   openGraph: {
-    title: "GLOCMEMIN | Global Christ Message Ministry",
+    title: "GLOCMEMIN | GLOBAL CHRIST MESSAGE MINISTRY",
     description:
-      "Taking the undiluted Word of God to the whole world. Jesus is Lord.",
+      "Is to take undiluted word of God to the whole world. Jesus is Lord.",
     type: "website",
     locale: siteConfig.locale,
     siteName: siteConfig.shortName,
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "GLOCMEMIN | Global Christ Message Ministry",
+    title: "GLOCMEMIN | GLOBAL CHRIST MESSAGE MINISTRY",
     description:
-      "Taking the undiluted Word of God to the whole world. Jesus is Lord.",
+      "Is to take undiluted word of God to the whole world. Jesus is Lord.",
   },
   robots: {
     index: true,

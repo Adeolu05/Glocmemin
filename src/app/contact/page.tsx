@@ -8,7 +8,7 @@ import { mapsEmbedUrl, mapsSearchUrl, whatsappUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Global Christ Message Ministry - phone, WhatsApp, email, Facebook, and fellowship location details.",
+    "Reach GLOBAL CHRIST MESSAGE MINISTRY on WhatsApp and Facebook. Tent location: Dojutelegan, Gekuba Apata, Ibadan.",
 };
 
 export default function ContactPage() {
@@ -20,16 +20,26 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Reach the ministry"
-        description={`Speak with ${ministry.minister}, join an online program, or fellowship with ${ministry.churchArm}.`}
+        description={`You can reach us on Whatsapp, ${ministry.contact.whatsapp} and Face book on AJakaye Adeyemi.`}
         action={
-          <a
-            href={wa}
-            target="_blank"
-            rel="noreferrer"
-            className="btn btn-primary"
-          >
-            WhatsApp {ministry.contact.whatsapp}
-          </a>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={ministry.contact.whatsappGroup}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-primary"
+            >
+              Join WhatsApp programs
+            </a>
+            <a
+              href={ministry.contact.facebookProgram}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-outline"
+            >
+              Watch on Facebook
+            </a>
+          </div>
         }
       />
 
@@ -39,13 +49,29 @@ export default function ContactPage() {
             <div className="grid gap-0">
               <Reveal>
                 <a
-                  href={wa}
+                  href={ministry.contact.whatsappGroup}
                   target="_blank"
                   rel="noreferrer"
                   className="block border-t-2 border-navy py-6 transition hover:bg-white/40"
                 >
                   <p className="text-sm tracking-[0.14em] text-azure uppercase">
-                    WhatsApp
+                    WhatsApp programs
+                  </p>
+                  <p className="display mt-2 text-2xl text-navy">
+                    Join the group where most programs take place
+                  </p>
+                </a>
+              </Reveal>
+
+              <Reveal delayMs={40}>
+                <a
+                  href={wa}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block border-t border-[var(--line)] py-6 transition hover:bg-white/40"
+                >
+                  <p className="text-sm tracking-[0.14em] text-azure uppercase">
+                    WhatsApp number
                   </p>
                   <p className="display mt-2 text-2xl text-navy">
                     {ministry.contact.whatsapp}
@@ -53,10 +79,29 @@ export default function ContactPage() {
                 </a>
               </Reveal>
 
-              <Reveal delayMs={60}>
+              <Reveal delayMs={80}>
+                <a
+                  href={ministry.contact.facebookProgram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block border-t border-[var(--line)] py-6 transition hover:bg-white/40"
+                >
+                  <p className="text-sm tracking-[0.14em] text-azure uppercase">
+                    Facebook
+                  </p>
+                  <p className="display mt-2 text-2xl text-navy">
+                    {ministry.contact.facebook}
+                  </p>
+                  <p className="mt-2 text-ink-soft">
+                    {ministry.contact.facebookProgramNote}
+                  </p>
+                </a>
+              </Reveal>
+
+              <Reveal delayMs={100}>
                 <a
                   href={`mailto:${ministry.contact.email}`}
-                  className="block border-t border-[var(--line)] py-6 transition hover:bg-white/40"
+                  className="block border-t border-b border-[var(--line)] py-6 transition hover:bg-white/40"
                 >
                   <p className="text-sm tracking-[0.14em] text-azure uppercase">
                     Email
@@ -65,17 +110,6 @@ export default function ContactPage() {
                     {ministry.contact.email}
                   </p>
                 </a>
-              </Reveal>
-
-              <Reveal delayMs={100}>
-                <div className="border-t border-b border-[var(--line)] py-6">
-                  <p className="text-sm tracking-[0.14em] text-azure uppercase">
-                    Facebook
-                  </p>
-                  <p className="display mt-2 text-2xl text-navy">
-                    {ministry.contact.facebook}
-                  </p>
-                </div>
               </Reveal>
             </div>
 
@@ -105,17 +139,13 @@ export default function ContactPage() {
 
             <Reveal delayMs={120}>
               <article className="border-t border-[var(--line)] pt-6">
-                <h2 className="display text-2xl text-navy">Postal address</h2>
+                <h2 className="display text-2xl text-navy">Tent location</h2>
                 <p className="mt-3 text-lg text-ink-soft">
-                  {ministry.contact.postal}
+                  {ministry.contact.locationDetail}
                 </p>
-                <h3 className="display mt-6 text-xl text-navy">
-                  Fellowship venue
-                </h3>
-                <p className="mt-2 text-ink-soft">{ministry.contact.venueNote}</p>
                 <div className="maps-frame mt-5">
                   <iframe
-                    title="Map to GLOCMEMIN fellowship venue"
+                    title="Map to GLOCMEMIN tent location"
                     src={mapsEmbedUrl()}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
@@ -132,18 +162,6 @@ export default function ContactPage() {
                 </a>
                 <p className="mt-6 text-sm font-semibold tracking-[0.12em] text-gold uppercase">
                   {ministry.motto}
-                </p>
-              </article>
-            </Reveal>
-
-            <Reveal delayMs={160}>
-              <article className="border-t border-[var(--line)] pt-6">
-                <h2 className="display text-2xl text-navy">Online programs</h2>
-                <p className="mt-3 text-ink-soft">
-                  Daily prayer, Monday and Wednesday vigils, Tuesday
-                  Sinner&apos;s Clinic, monthly healing/deliverance, and{" "}
-                  <strong>{ministry.monthly.title}</strong> revival all run live
-                  and online. Message WhatsApp to receive joining details.
                 </p>
               </article>
             </Reveal>

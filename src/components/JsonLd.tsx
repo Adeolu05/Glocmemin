@@ -12,17 +12,17 @@ export function JsonLd() {
     telephone: ministry.contact.phones.map((phone) => `+234${phone.slice(1)}`),
     description: siteConfig.description,
     motto: ministry.motto,
-    founder: ministry.minister,
+    founder: ministry.ministerTitle,
     address: {
       "@type": "PostalAddress",
-      streetAddress: ministry.contact.venueNote,
-      addressLocality: "Odogbolu",
+      streetAddress: ministry.contact.tentLocation,
+      addressLocality: "Ibadan",
+      addressRegion: "Oyo",
       addressCountry: "NG",
-      postalCode: "20128",
-      postOfficeBoxNumber: "20128",
     },
     sameAs: [
-      `https://www.facebook.com/${encodeURIComponent(ministry.contact.facebook.replace(/\s+/g, ""))}`,
+      ministry.contact.facebookProgram,
+      ministry.contact.whatsappGroup,
     ],
   };
 

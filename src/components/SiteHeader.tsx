@@ -11,6 +11,9 @@ const links = [
   { href: "/about", label: "About" },
   { href: "/beliefs", label: "Beliefs" },
   { href: "/programs", label: "Programs" },
+  { href: "/life", label: "Life" },
+  { href: "/humanitarian", label: "Humanitarian" },
+  { href: "/give", label: "Give" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -50,8 +53,6 @@ export function SiteHeader() {
     };
   }, [open]);
 
-  const wa = `https://wa.me/234${ministry.contact.whatsapp.slice(1)}`;
-
   return (
     <>
       <header
@@ -83,7 +84,7 @@ export function SiteHeader() {
                 GLOCMEMIN
               </span>
               <span
-                className={`hidden text-[0.68rem] tracking-[0.1em] uppercase transition-colors duration-300 sm:block ${
+                className={`hidden text-[0.68rem] tracking-[0.1em] uppercase transition-colors duration-300 lg:block ${
                   overHero ? "text-white/70" : "text-ink-soft"
                 }`}
               >
@@ -92,7 +93,10 @@ export function SiteHeader() {
             </span>
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+          <nav
+            className="hidden items-center gap-0.5 xl:flex"
+            aria-label="Primary"
+          >
             {links.map((link) => {
               const active = pathname === link.href;
               return (
@@ -110,17 +114,19 @@ export function SiteHeader() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link
-              href="/contact"
+            <a
+              href={ministry.contact.whatsappGroup}
+              target="_blank"
+              rel="noreferrer"
               className={`btn hidden !min-h-10 !px-4 !text-sm sm:inline-flex ${
                 overHero ? "btn-ghost" : "btn-primary"
               }`}
             >
-              Join Us
-            </Link>
+              Join Live
+            </a>
             <button
               type="button"
-              className={`menu-toggle lg:hidden ${
+              className={`menu-toggle xl:hidden ${
                 overHero ? "menu-toggle--light" : "menu-toggle--dark"
               }`}
               aria-expanded={open}
@@ -157,7 +163,10 @@ export function SiteHeader() {
       >
         <div className="mobile-nav__panel">
           <div className="container flex h-full flex-col pt-24 pb-10">
-            <nav className="flex flex-1 flex-col justify-center gap-1" aria-label="Mobile">
+            <nav
+              className="flex flex-1 flex-col justify-center gap-1"
+              aria-label="Mobile"
+            >
               {links.map((link, index) => {
                 const active = pathname === link.href;
                 return (
@@ -182,14 +191,14 @@ export function SiteHeader() {
                 {ministry.motto}
               </p>
               <a
-                href={wa}
+                href={ministry.contact.whatsappGroup}
                 target="_blank"
                 rel="noreferrer"
                 tabIndex={open ? 0 : -1}
                 className="btn btn-primary mt-4 !bg-white !text-navy"
                 onClick={() => setOpen(false)}
               >
-                WhatsApp {ministry.contact.whatsapp}
+                Join WhatsApp programs
               </a>
             </div>
           </div>

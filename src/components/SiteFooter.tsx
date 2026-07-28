@@ -9,12 +9,7 @@ export function SiteFooter() {
         <div>
           <div className="mb-4 flex items-center gap-3">
             <span className="brand-mark brand-mark--on-dark brand-mark--footer">
-              <Image
-                src="/images/logo.svg"
-                alt=""
-                width={40}
-                height={48}
-              />
+              <Image src="/images/logo.svg" alt="" width={40} height={48} />
             </span>
             <div>
               <p className="display text-xl">{ministry.shortName}</p>
@@ -22,7 +17,10 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="max-w-sm text-white/70">
-            Taking the undiluted Word of God to the whole world.
+            {ministry.locationNote}
+          </p>
+          <p className="mt-3 text-sm text-white/70">
+            Tent: {ministry.contact.tentLocation}
           </p>
           <p className="site-footer__motto">{ministry.motto}</p>
         </div>
@@ -40,6 +38,15 @@ export function SiteFooter() {
               <Link href="/programs">Programs</Link>
             </li>
             <li>
+              <Link href="/life">Life</Link>
+            </li>
+            <li>
+              <Link href="/humanitarian">Humanitarian</Link>
+            </li>
+            <li>
+              <Link href="/give">Give</Link>
+            </li>
+            <li>
               <Link href="/contact">Contact</Link>
             </li>
           </ul>
@@ -55,14 +62,23 @@ export function SiteFooter() {
             </li>
             <li>
               <a
-                href={`https://wa.me/234${ministry.contact.whatsapp.slice(1)}`}
+                href={ministry.contact.whatsappGroup}
                 target="_blank"
                 rel="noreferrer"
               >
-                WhatsApp {ministry.contact.whatsapp}
+                WhatsApp programs
               </a>
             </li>
-            <li>{ministry.contact.postal}</li>
+            <li>
+              <a
+                href={ministry.contact.facebookProgram}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Facebook · {ministry.contact.facebook}
+              </a>
+            </li>
+            <li>WhatsApp {ministry.contact.whatsapp}</li>
           </ul>
         </div>
       </div>
