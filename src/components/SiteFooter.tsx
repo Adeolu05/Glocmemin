@@ -17,10 +17,11 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="max-w-sm text-white/70">
-            {ministry.locationNote}
+            We currently meet and train disciples under a tent in Ibadan. Our
+            Odogbolu church location is not open at this time.
           </p>
           <p className="mt-3 text-sm text-white/70">
-            Tent: {ministry.contact.tentLocation}
+            Visit us at Dojutelegan, Gekuba Apata, Ibadan.
           </p>
           <p className="site-footer__motto">{ministry.motto}</p>
         </div>
