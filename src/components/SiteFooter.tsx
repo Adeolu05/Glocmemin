@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SocialLinks } from "@/components/SocialIcons";
 import { ministry } from "@/content/ministry";
 
 export function SiteFooter() {
@@ -9,7 +10,12 @@ export function SiteFooter() {
         <div>
           <div className="mb-4 flex items-center gap-3">
             <span className="brand-mark brand-mark--on-dark brand-mark--footer">
-              <Image src="/images/logo.svg" alt="" width={40} height={48} />
+              <Image
+                src="/images/logo.png"
+                alt=""
+                width={40}
+                height={88}
+              />
             </span>
             <div>
               <p className="display text-xl">{ministry.shortName}</p>
@@ -17,12 +23,13 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="max-w-sm text-white/70">
-            We currently meet and train disciples under a tent in Ibadan. Our
-            Odogbolu church location is not open at this time.
+            We meet and train disciples under a tent in Ibadan. Odogbolu is our
+            mission field, with Ososa and Imodimosan in Ogun State.
           </p>
           <p className="mt-3 text-sm text-white/70">
             Visit us at Dojutelegan, Gekuba Apata, Ibadan.
           </p>
+          <SocialLinks className="mt-5" tone="dark" />
           <p className="site-footer__motto">{ministry.motto}</p>
         </div>
 
@@ -77,6 +84,15 @@ export function SiteFooter() {
                 rel="noreferrer"
               >
                 Live on Facebook · {ministry.contact.facebook}
+              </a>
+            </li>
+            <li>
+              <a
+                href={ministry.contact.youtube}
+                target="_blank"
+                rel="noreferrer"
+              >
+                YouTube · {ministry.contact.youtubeLabel}
               </a>
             </li>
             <li>WhatsApp {ministry.contact.whatsapp}</li>

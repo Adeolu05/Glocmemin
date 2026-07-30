@@ -66,7 +66,6 @@ export default function AboutPage() {
                 <p className="display mt-1 text-2xl text-navy">
                   {ministry.ministerTitle}
                 </p>
-                <p className="mt-1 text-ink-soft">{ministry.minister}</p>
               </div>
             </div>
           </Reveal>
@@ -121,6 +120,15 @@ export default function AboutPage() {
             <div>
               <p className="eyebrow">Our emblem</p>
               <h2 className="display mt-3 text-3xl text-navy">What the logo means</h2>
+              <div className="mt-6 flex justify-center sm:justify-start">
+                <Image
+                  src="/images/logo.png"
+                  alt="GLOCMEMIN letterhead logo — drop of oil"
+                  width={220}
+                  height={480}
+                  className="h-auto w-[11rem] object-contain sm:w-[13rem]"
+                />
+              </div>
               <p className="prose-lead mt-4">{ministry.logoMeaning}</p>
               <p className="mt-4 text-ink-soft">{ministry.destroyIntro}</p>
               <ul className="mt-4 space-y-3 text-ink-soft">

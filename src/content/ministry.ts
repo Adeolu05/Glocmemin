@@ -11,9 +11,9 @@ export const ministry = {
     "Is to take undiluted word of God to the whole world, so as to enlighten people about Christ and his mission to the world and to disciple them to SERVE God better. Isaiah 45:13.",
   missionRef: "Isaiah 45:13",
   minister: "Adeyemi Ajakaye",
-  ministerTitle: "Evang. G. A. Ajakaye",
+  ministerTitle: "Adeyemi Ajakaye (Evangelist)",
   logoMeaning:
-    "It shall be globe on the open Bible with a cross passing through the globe from the top. That is, the whole world is to be directed by the word of God and that Christ died for the world on the cross.",
+    "The logo is like a drop of oil: no matter who you are, as soon as you are under our ministration, the word of God will enter your life. It shall be globe on the open Bible with a cross passing through the globe from the top. That is, the whole world is to be directed by the word of God and that Christ died for the world on the cross.",
   destroyIntro:
     "Therefore we are to destroy:",
   destroy: [
@@ -208,7 +208,7 @@ export const ministry = {
   invitation:
     "Come to Jesus; He is beckoning to you. Cast all your burdens on Him, for He cares for you. 1 Peter 5:7.",
   locationNote:
-    "The church at  Odogbolu is not function at present. We don't have church yet but tent where we train disciples.",
+    "Odogbolu is our mission field, with Ososa and Imodimosan in Ogun State. We don't have church yet but tent where we train disciples.",
   knowYourselfTitle: "WHAT YOU SHOULD KNOW ABOUT YOURSELF. Why do you come to the church or fellowship?",
   knowYourself: [
     {
@@ -269,9 +269,11 @@ export const ministry = {
     facebookProgram: "https://www.facebook.com/share/v/1EkAF4nyFb/",
     facebookProgramNote:
       "this is one of Facebook program @ Adeyemi Ajakaye by Sunday, Wednesday and Friday.",
+    youtube: "https://www.youtube.com/@adeyemigabrielajakaye8903",
+    youtubeLabel: "Adeyemi Gabriel Ajakaye",
     tentLocation: "Dojutelegan, Gekuba Apata, Ibadan",
     venueNote: "Dojutelegan, Gekuba Apata, Ibadan",
     locationDetail:
-      "The Tent location is at Dojutelegan, Gekuba Apata, Ibadan. We don't have church yet but tent where we train disciples. The church at  Odogbolu is not function at present.",
+      "The Tent location is at Dojutelegan, Gekuba Apata, Ibadan. We don't have church yet but tent where we train disciples. Odogbolu is our mission field, with Ososa and Imodimosan in Ogun State.",
   },
 } as const;

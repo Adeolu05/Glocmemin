@@ -68,10 +68,10 @@ export function SiteHeader() {
               }`}
             >
               <Image
-                src="/images/logo.svg"
+                src="/images/logo.png"
                 alt="GLOCMEMIN logo"
                 width={40}
-                height={48}
+                height={88}
                 priority
               />
             </span>

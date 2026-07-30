@@ -176,7 +176,6 @@ export default function HomePage() {
                 <p className="display mt-1 text-2xl text-navy">
                   {ministry.ministerTitle}
                 </p>
-                <p className="mt-1 text-ink-soft">{ministry.minister}</p>
               </div>
             </div>
           </Reveal>

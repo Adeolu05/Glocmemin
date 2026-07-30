@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import { ContactRequestForm } from "@/components/ContactRequestForm";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
+import { SocialLinks } from "@/components/SocialIcons";
 import { ministry } from "@/content/ministry";
 import { mapsEmbedUrl, mapsSearchUrl, whatsappUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Reach GLOBAL CHRIST MESSAGE MINISTRY on WhatsApp and Facebook. Tent location: Dojutelegan, Gekuba Apata, Ibadan.",
+    "Reach GLOBAL CHRIST MESSAGE MINISTRY on WhatsApp, Facebook, and YouTube. Tent location: Dojutelegan, Gekuba Apata, Ibadan. Mission field: Odogbolu, Ososa, and Imodimosan in Ogun State.",
 };
 
 export default function ContactPage() {
@@ -38,6 +39,14 @@ export default function ContactPage() {
               className="btn btn-outline"
             >
               Catch us live on Facebook
+            </a>
+            <a
+              href={ministry.contact.youtube}
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-outline"
+            >
+              Watch on YouTube
             </a>
           </div>
         }
@@ -98,6 +107,25 @@ export default function ContactPage() {
                 </a>
               </Reveal>
 
+              <Reveal delayMs={90}>
+                <a
+                  href={ministry.contact.youtube}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block border-t border-[var(--line)] py-6 transition hover:bg-white/40"
+                >
+                  <p className="text-sm tracking-[0.14em] text-azure uppercase">
+                    YouTube
+                  </p>
+                  <p className="display mt-2 text-2xl text-navy">
+                    {ministry.contact.youtubeLabel}
+                  </p>
+                  <p className="mt-2 text-ink-soft">
+                    Messages and programs from the ministry channel.
+                  </p>
+                </a>
+              </Reveal>
+
               <Reveal delayMs={100}>
                 <a
                   href={`mailto:${ministry.contact.email}`}
@@ -112,6 +140,10 @@ export default function ContactPage() {
                 </a>
               </Reveal>
             </div>
+
+            <Reveal delayMs={80}>
+              <SocialLinks tone="light" />
+            </Reveal>
 
             <Reveal delayMs={80}>
               <ContactRequestForm />

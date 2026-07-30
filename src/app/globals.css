@@ -106,9 +106,9 @@ a {
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3.35rem;
-  padding: 0.2rem;
+  width: 2.85rem;
+  height: 3.85rem;
+  padding: 0.15rem;
   border-radius: 0.7rem;
   transition:
     background-color 280ms ease,
@@ -120,6 +120,7 @@ a {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .brand-mark--on-light {
@@ -133,11 +134,62 @@ a {
 }
 
 .brand-mark--footer {
-  width: 3.15rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 4.1rem;
   background: rgba(247, 244, 238, 0.98);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition:
+    background-color 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease;
+}
+
+.social-links--dark a {
+  color: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.social-links--dark a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.social-links--light a {
+  color: var(--navy);
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.social-links--light a:hover {
+  border-color: var(--azure);
+  background: #fff;
+}
+
+.social-links__label {
+  line-height: 1;
 }
 
 /* Header */

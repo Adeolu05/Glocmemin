@@ -23,6 +23,7 @@ export function JsonLd() {
     sameAs: [
       ministry.contact.facebookProgram,
       ministry.contact.whatsappGroup,
+      ministry.contact.youtube,
     ],
   };
 
