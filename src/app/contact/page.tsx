@@ -9,7 +9,7 @@ import { mapsEmbedUrl, mapsSearchUrl, whatsappUrl } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Reach GLOBAL CHRIST MESSAGE MINISTRY on WhatsApp, Facebook, and YouTube. Tent location: Dojutelegan, Gekuba Apata, Ibadan. Mission field: Odogbolu, Ososa, and Imodimosan in Ogun State.",
+    "Reach GLOBAL CHRIST MESSAGE MINISTRY on WhatsApp, Facebook, and YouTube. Training tent: Dojutelegan, Gekuba Apata, Ibadan. Mission field: Odogbolu, Ososa, and Imodimosan in Ogun State.",
 };
 
 export default function ContactPage() {

@@ -22,12 +22,9 @@ export function SiteFooter() {
               <p className="text-sm text-white/55">{ministry.churchArm}</p>
             </div>
           </div>
-          <p className="max-w-sm text-white/70">
-            We meet and train disciples under a tent in Ibadan. Odogbolu is our
-            mission field, with Ososa and Imodimosan in Ogun State.
-          </p>
+          <p className="max-w-sm text-white/70">{ministry.locationNote}</p>
           <p className="mt-3 text-sm text-white/70">
-            Visit us at Dojutelegan, Gekuba Apata, Ibadan.
+            Visit the tent at {ministry.contact.tentLocation}.
           </p>
           <SocialLinks className="mt-5" tone="dark" />
           <p className="site-footer__motto">{ministry.motto}</p>

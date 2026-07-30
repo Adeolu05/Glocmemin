@@ -214,7 +214,7 @@ export default function HomePage() {
               <h2 className="display">{ministry.invitation}</h2>
               <p>{ministry.locationNote}</p>
               <p className="mt-2">
-                Find us at the tent: {ministry.contact.tentLocation}
+                Visit the tent at {ministry.contact.tentLocation}.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a

@@ -208,7 +208,7 @@ export const ministry = {
   invitation:
     "Come to Jesus; He is beckoning to you. Cast all your burdens on Him, for He cares for you. 1 Peter 5:7.",
   locationNote:
-    "Odogbolu is our mission field, with Ososa and Imodimosan in Ogun State. We don't have church yet but tent where we train disciples.",
+    "Our mission field covers Odogbolu, Ososa, and Imodimosan in Ogun State. Until a church building is established, we train disciples under the tent in Ibadan.",
   knowYourselfTitle: "WHAT YOU SHOULD KNOW ABOUT YOURSELF. Why do you come to the church or fellowship?",
   knowYourself: [
     {
@@ -273,7 +273,8 @@ export const ministry = {
     youtubeLabel: "Adeyemi Gabriel Ajakaye",
     tentLocation: "Dojutelegan, Gekuba Apata, Ibadan",
     venueNote: "Dojutelegan, Gekuba Apata, Ibadan",
+    missionField: "Odogbolu, Ososa, and Imodimosan in Ogun State",
     locationDetail:
-      "The Tent location is at Dojutelegan, Gekuba Apata, Ibadan. We don't have church yet but tent where we train disciples. Odogbolu is our mission field, with Ososa and Imodimosan in Ogun State.",
+      "Meet us under the tent at Dojutelegan, Gekuba Apata, Ibadan, where we train disciples. Until a church building is established, this is our gathering place. Our mission field covers Odogbolu, Ososa, and Imodimosan in Ogun State.",
   },
 } as const;

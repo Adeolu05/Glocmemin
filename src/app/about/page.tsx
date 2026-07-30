@@ -145,7 +145,7 @@ export default function AboutPage() {
                 {ministry.locationNote}
               </p>
               <p className="mt-2 text-ink-soft">
-                The Tent location is at {ministry.contact.tentLocation}.
+                Visit the tent at {ministry.contact.tentLocation}.
               </p>
             </div>
           </Reveal>
